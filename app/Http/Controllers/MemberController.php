@@ -17,4 +17,8 @@ class MemberController extends Controller
     {
         return response()->json(Member::find($id));
     }
+    public function bookings()
+{
+    return $this->hasMany(\App\Models\Booking::class, 'memberid');
+}
 }
